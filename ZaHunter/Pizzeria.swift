@@ -9,7 +9,17 @@
 import UIKit
 import MapKit
 
-class Pizzeria: MKMapItem {
+class Pizzeria: NSObject {
+    
+    //var name:String
+    var distanceFromCurrentLocation:Double
+    var name:String
+    
+    init(userLocation:CLLocation, pizzeria:CLPlacemark)
+    {
+        distanceFromCurrentLocation = (userLocation.distanceFromLocation(pizzeria.location!))/1609.344
+        name = pizzeria.name!
+    }
     
 
 }

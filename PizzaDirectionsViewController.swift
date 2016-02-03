@@ -16,7 +16,7 @@ class PizzaDirectionsViewController: UIViewController, CLLocationManagerDelegate
     @IBOutlet weak var directionsTextView: UITextView!
     
     let locationManager = CLLocationManager()
-    var pizzerias:[MKMapItem] = [MKMapItem]()
+    var pizzerias:[Pizzeria] = [Pizzeria]()
     
     
     override func viewDidLoad()
@@ -57,13 +57,18 @@ class PizzaDirectionsViewController: UIViewController, CLLocationManagerDelegate
             
             for(var i = 0; i < 4; i++)
             {
-                print(mapItems[i])
+                print(mapItems[i].placemark.location!.coordinate)
                 print ("--------------------------\n")
                 
-                self.pizzerias.append(mapItems[i])
+                let pizzeria:Pizzeria = Pizzeria(userLocation: location, pizzeria: mapItems[i].placemark)
+                
+                
+                self.pizzerias.append(pizzeria)
+                print(self.pizzerias.count)
             }
             
-           print(self.pizzerias.count)
+            print(self.pizzerias.count)
+            self.pizzeriaTableView.reloadData()
         
         }
         
@@ -77,9 +82,10 @@ class PizzaDirectionsViewController: UIViewController, CLLocationManagerDelegate
         
         if location?.verticalAccuracy < 1000 && location?.horizontalAccuracy < 1000
         {
-            reverseGeocode(location!)
-            //directionsTextView.text = "Found you!"
             locationManager.stopUpdatingLocation()
+            reverseGeocode(location!)
+            self.locationManager.delegate = nil
+            //directionsTextView.text = "Found you!"
         }
     }
     
@@ -97,8 +103,8 @@ class PizzaDirectionsViewController: UIViewController, CLLocationManagerDelegate
         let pizzeria = self.pizzerias[indexPath.row]
         
         cell?.textLabel!.text = pizzeria.name
-        //cell?.detailTextLabel!.text = pizzeria.placemark as? String
-    
+        cell?.detailTextLabel!.text = String(format: "%.2f kilometres away", pizzeria.distanceFromCurrentLocation)
+        
         return cell!
     }
     
