@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		DBD21BA91C6287C500901062 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD21BA81C6287C500901062 /* AppDelegate.swift */; };
-		DBD21BAB1C6287C500901062 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD21BAA1C6287C500901062 /* ViewController.swift */; };
 		DBD21BAE1C6287C500901062 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBD21BAC1C6287C500901062 /* Main.storyboard */; };
 		DBD21BB01C6287C500901062 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBD21BAF1C6287C500901062 /* Assets.xcassets */; };
 		DBD21BB31C6287C500901062 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBD21BB11C6287C500901062 /* LaunchScreen.storyboard */; };
+		DBD21BBD1C62945B00901062 /* PizzaDirectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD21BBC1C62945B00901062 /* PizzaDirectionsViewController.swift */; };
+		DBD21BBF1C62966A00901062 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD21BBE1C62966A00901062 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DBD21BA51C6287C500901062 /* ZaHunter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZaHunter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBD21BA81C6287C500901062 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DBD21BAA1C6287C500901062 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DBD21BAD1C6287C500901062 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DBD21BAF1C6287C500901062 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DBD21BB21C6287C500901062 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DBD21BB41C6287C500901062 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBD21BBC1C62945B00901062 /* PizzaDirectionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PizzaDirectionsViewController.swift; path = ../PizzaDirectionsViewController.swift; sourceTree = "<group>"; };
+		DBD21BBE1C62966A00901062 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBD21BBF1C62966A00901062 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +41,7 @@
 		DBD21B9C1C6287C500901062 = {
 			isa = PBXGroup;
 			children = (
+				DBD21BBE1C62966A00901062 /* MapKit.framework */,
 				DBD21BA71C6287C500901062 /* ZaHunter */,
 				DBD21BA61C6287C500901062 /* Products */,
 			);
@@ -55,7 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				DBD21BA81C6287C500901062 /* AppDelegate.swift */,
-				DBD21BAA1C6287C500901062 /* ViewController.swift */,
+				DBD21BBC1C62945B00901062 /* PizzaDirectionsViewController.swift */,
 				DBD21BAC1C6287C500901062 /* Main.storyboard */,
 				DBD21BAF1C6287C500901062 /* Assets.xcassets */,
 				DBD21BB11C6287C500901062 /* LaunchScreen.storyboard */,
@@ -136,8 +140,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DBD21BAB1C6287C500901062 /* ViewController.swift in Sources */,
 				DBD21BA91C6287C500901062 /* AppDelegate.swift in Sources */,
+				DBD21BBD1C62945B00901062 /* PizzaDirectionsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +289,7 @@
 				DBD21BB91C6287C500901062 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
