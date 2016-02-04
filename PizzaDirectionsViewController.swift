@@ -17,6 +17,7 @@ class PizzaDirectionsViewController: UIViewController, CLLocationManagerDelegate
     
     let locationManager = CLLocationManager()
     var pizzerias:[Pizzeria] = [Pizzeria]()
+    var totalETA:Double = 0.0
     
     
     override func viewDidLoad()
@@ -61,16 +62,44 @@ class PizzaDirectionsViewController: UIViewController, CLLocationManagerDelegate
                 print ("--------------------------\n")
                 
                 let pizzeria:Pizzeria = Pizzeria(userLocation: location, pizzeria: mapItems[i].placemark)
-                
-                
+            
                 self.pizzerias.append(pizzeria)
-                print(self.pizzerias.count)
+                self.getETAOfZaHunt(mapItems[i])
+                //print(self.pizzerias.count)
             }
             
-            print(self.pizzerias.count)
+            print(self.totalETA/60)
             self.pizzeriaTableView.reloadData()
         
         }
+        
+    }
+    
+    func getETAOfZaHunt(destination:MKMapItem)
+    {
+        let request:MKDirectionsRequest = MKDirectionsRequest()
+        //var time:Double!
+        request.transportType = MKDirectionsTransportType.Walking
+        request.source = MKMapItem.mapItemForCurrentLocation()
+        request.destination = destination
+        
+        let eta = MKDirections(request: request)
+        eta.calculateETAWithCompletionHandler { (response:MKETAResponse?, error:NSError?) -> Void in
+//            if error == nil
+//            {
+//                print(error)
+//                
+//            }
+//            else
+//            {
+//                print(response)
+//            }
+            print(response!.expectedTravelTime)
+            
+            self.totalETA = self.totalETA + response!.expectedTravelTime
+            
+        }
+       
         
     }
     
@@ -84,7 +113,7 @@ class PizzaDirectionsViewController: UIViewController, CLLocationManagerDelegate
         {
             locationManager.stopUpdatingLocation()
             reverseGeocode(location!)
-            self.locationManager.delegate = nil
+            //self.locationManager.delegate = nil
             //directionsTextView.text = "Found you!"
         }
     }
