@@ -17,6 +17,15 @@ class MapViewController: UIViewController {
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        for place in pizzerias
+        {
+            let annotation:MKPointAnnotation = MKPointAnnotation()
+            annotation.coordinate = place.location.coordinate
+            annotation.title = place.name
+            mapView.addAnnotation(annotation)
+        }
+        
 
         
     }

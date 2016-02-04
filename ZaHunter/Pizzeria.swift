@@ -14,11 +14,13 @@ class Pizzeria: NSObject {
     //var name:String
     var distanceFromCurrentLocation:Double
     var name:String
+    var location:CLLocation
     
     init(userLocation:CLLocation, pizzeria:CLPlacemark)
     {
         distanceFromCurrentLocation = (userLocation.distanceFromLocation(pizzeria.location!))/1609.344
         name = pizzeria.name!
+        location = pizzeria.location!
     }
     
 
