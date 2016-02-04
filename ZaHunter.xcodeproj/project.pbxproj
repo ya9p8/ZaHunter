@@ -14,6 +14,7 @@
 		DBD21BBD1C62945B00901062 /* PizzaDirectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD21BBC1C62945B00901062 /* PizzaDirectionsViewController.swift */; };
 		DBD21BBF1C62966A00901062 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD21BBE1C62966A00901062 /* MapKit.framework */; };
 		DBD21BC11C629B8E00901062 /* Pizzeria.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD21BC01C629B8E00901062 /* Pizzeria.swift */; };
+		DBD21BC31C62E8FF00901062 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD21BC21C62E8FF00901062 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		DBD21BBC1C62945B00901062 /* PizzaDirectionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PizzaDirectionsViewController.swift; path = ../PizzaDirectionsViewController.swift; sourceTree = "<group>"; };
 		DBD21BBE1C62966A00901062 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		DBD21BC01C629B8E00901062 /* Pizzeria.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pizzeria.swift; sourceTree = "<group>"; };
+		DBD21BC21C62E8FF00901062 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			children = (
 				DBD21BA81C6287C500901062 /* AppDelegate.swift */,
 				DBD21BBC1C62945B00901062 /* PizzaDirectionsViewController.swift */,
+				DBD21BC21C62E8FF00901062 /* MapViewController.swift */,
 				DBD21BC01C629B8E00901062 /* Pizzeria.swift */,
 				DBD21BAC1C6287C500901062 /* Main.storyboard */,
 				DBD21BAF1C6287C500901062 /* Assets.xcassets */,
@@ -146,6 +149,7 @@
 				DBD21BC11C629B8E00901062 /* Pizzeria.swift in Sources */,
 				DBD21BA91C6287C500901062 /* AppDelegate.swift in Sources */,
 				DBD21BBD1C62945B00901062 /* PizzaDirectionsViewController.swift in Sources */,
+				DBD21BC31C62E8FF00901062 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

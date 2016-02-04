@@ -83,6 +83,8 @@ class PizzaDirectionsViewController: UIViewController, CLLocationManagerDelegate
         request.source = MKMapItem.mapItemForCurrentLocation()
         request.destination = destination
         
+        print("Current Location: "+String(request.source!)+"\nDestination Location: "+String(request.destination!.placemark.location!))
+        
         let eta = MKDirections(request: request)
         eta.calculateETAWithCompletionHandler { (response:MKETAResponse?, error:NSError?) -> Void in
 //            if error == nil
@@ -97,9 +99,12 @@ class PizzaDirectionsViewController: UIViewController, CLLocationManagerDelegate
             print(response!.expectedTravelTime)
             
             self.totalETA = self.totalETA + response!.expectedTravelTime
+            //time = response!.expectedTravelTime
+            //print(time)
             
         }
-       
+        //print(time)
+        //return time
         
     }
     
@@ -113,7 +118,7 @@ class PizzaDirectionsViewController: UIViewController, CLLocationManagerDelegate
         {
             locationManager.stopUpdatingLocation()
             reverseGeocode(location!)
-            //self.locationManager.delegate = nil
+            self.locationManager.delegate = nil
             //directionsTextView.text = "Found you!"
         }
     }
@@ -138,15 +143,14 @@ class PizzaDirectionsViewController: UIViewController, CLLocationManagerDelegate
     }
     
     
-
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        let mapVC:MapViewController = segue.destinationViewController as! MapViewController
+        mapVC.pizzerias = self.pizzerias
     }
-    */
+    
 
 }
